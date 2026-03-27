@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<process name="PlaceOrderProcess"
+    targetNamespace="http://globalbooks.com/bpel/placeorder" 
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:tns="http://globalbooks.com/bpel/placeorder"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+
+    <import location="PlaceOrderArtifacts.wsdl" namespace="http://globalbooks.com/bpel/placeorder" importType="http://schemas.xmlsoap.org/wsdl/" />
+
+    <partnerLinks>
+        <partnerLink name="client" partnerLinkType="tns:PlaceOrderPartnerLinkType" myRole="me" />
+    </partnerLinks>
+
+    <variables>
+        <variable name="clientRequest" messageType="tns:PlaceOrderMessage"/>
+        <variable name="clientResponse" messageType="tns:PlaceOrderMessage"/>
+    </variables>
+
+    <sequence>
+        <receive name="ReceiveOrder" partnerLink="client" portType="tns:PlaceOrderPortType" operation="processOrder" variable="clientRequest" createInstance="yes"/>
+        
+        <assign name="AssignSuccessMessage">
+            <copy>
+                <from>
+                    <literal>Order Processed Successfully</literal>
+                </from>
+                <to variable="clientResponse" part="payload"/>
+            </copy>
+        </assign>
+
+        <reply name="ReplyToClient" partnerLink="client" portType="tns:PlaceOrderPortType" operation="processOrder" variable="clientResponse"/>
+    </sequence>
+</process>

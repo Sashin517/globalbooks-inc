@@ -1,0 +1,5 @@
+com\globalbooks\config\SecurityConfig.class
+com\globalbooks\controller\OrderController.class
+com\globalbooks\OrdersApplication.class
+com\globalbooks\config\RabbitMQConfig.class
+com\globalbooks\model\Order.class

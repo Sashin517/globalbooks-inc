@@ -1,0 +1,4 @@
+com\globalbooks\consumer\ShippingConsumer.class
+com\globalbooks\ShippingApplication.class
+com\globalbooks\config\RabbitMQConfig.class
+com\globalbooks\model\Order.class
