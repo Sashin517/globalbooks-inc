@@ -1,4 +1,3 @@
-```markdown
 # 📚 GlobalBooks Inc. | Hybrid SOA & Microservices Architecture
 
 ## 🌐 Project Overview
