@@ -28,14 +28,6 @@ By integrating **Apache ODE (BPEL)** for orchestration and **RabbitMQ** for even
 * **🔒 Dual Security Perimeter**: Implements both legacy WS-Security (UsernameToken) for internal catalog data and stateless OAuth2/JWT for external API clients.
 * **⚙️ Resilient Error Handling**: Utilizes RabbitMQ manual acknowledgments, TTL backoff retries, and isolated Dead-Letter Queues (DLQ) to prevent data loss during fulfillment crashes.
 
----
-
-## 🏗️ Architecture Design
-
-*(Note: Upload your architecture diagram image to your GitHub repo and link it here)*
-
----
-
 ## 🛠️ Installation & Setup
 
 ### 1️⃣ Prerequisites
